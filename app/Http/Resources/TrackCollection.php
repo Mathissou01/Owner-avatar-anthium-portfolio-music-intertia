@@ -15,7 +15,7 @@ class TrackCollection extends ResourceCollection
     public function toArray($request)
     {
         return $this->collection->map->only(
-            'id', 'title', 'artist'
+            'id', 'title', 'artist','genre', 'bpm', 'key', 'dropbox_link', 'youtube_link', 'duration', 'year'
         );
     }
 }
