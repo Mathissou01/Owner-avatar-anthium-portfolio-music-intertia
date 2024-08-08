@@ -15,6 +15,7 @@ class TracksTableSeeder extends Seeder
         DB::table('tracks')->insert([
             [
                 'title' => 'Pierre, feuille, papier, ciseaux',
+                'account_id' => 1,
                 'artist' => 'Columbine',
                 'genre' => 'Genre 1',
                 'bpm' => 120,
@@ -28,6 +29,7 @@ class TracksTableSeeder extends Seeder
             ],
             [
                 'title' => 'Une Histoire',
+                'account_id' => 1,
                 'artist' => 'Naza',
                 'genre' => 'Genre 2',
                 'bpm' => 128,

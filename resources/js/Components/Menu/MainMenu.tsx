@@ -1,5 +1,5 @@
 import MainMenuItem from '@/Components/Menu/MainMenuItem';
-import { Building, CircleGauge, Printer, Users } from 'lucide-react';
+import { Building, CircleGauge, Printer, Users, Music } from 'lucide-react';
 
 interface MainMenuProps {
   className?: string;
@@ -27,6 +27,11 @@ export default function MainMenu({ className }: MainMenuProps) {
         text="Reports"
         link="reports"
         icon={<Printer size={20} />}
+      />
+      <MainMenuItem
+        text="Tracks"
+        link="tracks"
+        icon={<Music size={20} />}
       />
     </div>
   );

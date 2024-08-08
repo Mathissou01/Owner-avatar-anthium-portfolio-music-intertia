@@ -15,12 +15,7 @@ class TrackCollection extends ResourceCollection
     public function toArray($request)
     {
         return $this->collection->map->only(
-            'id',
-            'name',
-            'phone',
-            'city',
-            'deleted_at',
-            'organization'
+            'id', 'title', 'artist'
         );
     }
 }

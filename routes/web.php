@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\TracksController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ImagesController;
 use App\Http\Controllers\OrganizationsController;
@@ -131,31 +132,31 @@ Route::put('contacts/{contact}/restore', [ContactsController::class, 'restore'])
 
 // Tracks
 
-Route::get('tracks', [ContactsController::class, 'index'])
+Route::get('tracks', [TracksController::class, 'index'])
     ->name('tracks')
     ->middleware('auth');
 
-Route::get('tracks/create', [ContactsController::class, 'create'])
+Route::get('tracks/create', [TracksController::class, 'create'])
     ->name('tracks.create')
     ->middleware('auth');
 
-Route::post('tracks', [ContactsController::class, 'store'])
+Route::post('tracks', [TracksController::class, 'store'])
     ->name('tracks.store')
     ->middleware('auth');
 
-Route::get('tracks/{track}/edit', [ContactsController::class, 'edit'])
+Route::get('tracks/{track}/edit', [TracksController::class, 'edit'])
     ->name('tracks.edit')
     ->middleware('auth');
 
-Route::put('tracks/{track}', [ContactsController::class, 'update'])
+Route::put('tracks/{track}', [TracksController::class, 'update'])
     ->name('tracks.update')
     ->middleware('auth');
 
-Route::delete('tracks/{track}', [ContactsController::class, 'destroy'])
+Route::delete('tracks/{track}', [TracksController::class, 'destroy'])
     ->name('tracks.destroy')
     ->middleware('auth');
 
-Route::put('tracks/{track}/restore', [ContactsController::class, 'restore'])
+Route::put('tracks/{track}/restore', [TracksController::class, 'restore'])
     ->name('tracks.restore')
     ->middleware('auth');
 

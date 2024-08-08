@@ -12,6 +12,7 @@ return new class () extends Migration {
     {
         Schema::create('tracks', function (Blueprint $table) {
             $table->id();
+            $table->integer('account_id')->index();
             $table->string('title');
             $table->string('artist');
             $table->string('genre');
@@ -22,6 +23,7 @@ return new class () extends Migration {
             $table->time('duration');
             $table->year('year');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

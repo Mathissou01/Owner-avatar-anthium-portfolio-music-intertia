@@ -37,6 +37,20 @@ export interface Contact {
   organization: Organization;
 }
 
+export interface Track {
+  id: number;
+  title: string;
+  artist: string;
+  genre: string;
+  bpm: string;
+  key: string;
+  dropbox_link: string;
+  youtube_link: string;
+  duration: string;
+  year: string;
+  deleted_at: string;
+}
+
 export interface Organization {
   id: number;
   name: string;

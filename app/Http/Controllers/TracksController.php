@@ -23,7 +23,6 @@ class TracksController extends Controller
             'filters' => Request::all('search', 'trashed'),
             'tracks' => new TrackCollection(
                 Auth::user()->account->tracks()
-                    ->with('organization')
                     ->orderByName()
                     ->filter(Request::only('search', 'trashed'))
                     ->paginate()
@@ -35,11 +34,9 @@ class TracksController extends Controller
     public function create(): Response
     {
         return Inertia::render('Tracks/Create', [
-            'organizations' => new UserOrganizationCollection(
                 Auth::user()->account->organizations()
                     ->orderBy('name')
                     ->get()
-            ),
         ]);
     }
 

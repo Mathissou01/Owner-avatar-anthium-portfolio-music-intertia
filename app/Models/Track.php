@@ -17,11 +17,6 @@ class Track extends Model
         return $this->where($field ?? 'id', $value)->withTrashed()->firstOrFail();
     }
 
-    public function organization(): BelongsTo
-    {
-        return $this->belongsTo(Organization::class);
-    }
-
     public function getNameAttribute()
     {
         return $this->first_name.' '.$this->last_name;
@@ -29,16 +24,16 @@ class Track extends Model
 
     public function scopeOrderByName($query)
     {
-        $query->orderBy('last_name')->orderBy('first_name');
+        $query->orderBy('title')->orderBy('artist');
     }
 
     public function scopeFilter($query, array $filters)
     {
         $query->when($filters['search'] ?? null, function ($query, $search) {
             $query->where(function ($query) use ($search) {
-                $query->where('first_name', 'like', '%'.$search.'%')
-                    ->orWhere('last_name', 'like', '%'.$search.'%')
-                    ->orWhere('email', 'like', '%'.$search.'%')
+                $query->where('title', 'like', '%'.$search.'%')
+                    ->orWhere('artist', 'like', '%'.$search.'%')
+                    ->orWhere('genre', 'like', '%'.$search.'%')
                     ->orWhereHas('organization', function ($query) use ($search) {
                         $query->where('name', 'like', '%'.$search.'%');
                     });
