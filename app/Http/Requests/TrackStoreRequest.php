@@ -31,8 +31,8 @@ class TrackStoreRequest extends FormRequest
             'genre' => ['nullable', 'max:50'],
             'bpm' => ['nullable', 'max:50'],
             'key' => ['nullable', 'max:150'],
-            'dropbox_link' => ['nullable', 'max:50'],
-            'youtube_link' => ['nullable', 'max:50'],
+            'dropbox_link' => ['nullable', 'max:800'],
+            'youtube_link' => ['nullable', 'max:800'],
             'duration' => ['nullable', 'max:50'],
             'year' => ['nullable', 'max:25'],
         ];

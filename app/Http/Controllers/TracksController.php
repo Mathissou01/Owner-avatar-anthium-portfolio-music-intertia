@@ -53,11 +53,9 @@ class TracksController extends Controller
     {
         return Inertia::render('Tracks/Edit', [
             'track' => new TrackResource($track),
-            'organizations' => new UserOrganizationCollection(
                 Auth::user()->account->organizations()
                     ->orderBy('name')
                     ->get()
-            ),
         ]);
     }
 

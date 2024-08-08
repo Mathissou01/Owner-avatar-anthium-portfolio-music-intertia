@@ -128,7 +128,9 @@ const Create = () => {
 
             <FieldGroup label="Durée" name="duration" error={errors.duration}>
               <TextInput
+                type="text"
                 name="duration"
+                placeholder="hh:mm:ss"
                 error={errors.duration}
                 value={data.duration}
                 onChange={e => setData('duration', e.target.value)}

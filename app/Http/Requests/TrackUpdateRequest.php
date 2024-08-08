@@ -26,18 +26,15 @@ class TrackUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'first_name' => ['required', 'max:50'],
-            'last_name' => ['required', 'max:50'],
-            'organization_id' => ['nullable', Rule::exists('organizations', 'id')->where(function ($query) {
-                $query->where('account_id', Auth::user()->account_id);
-            })],
-            'email' => ['nullable', 'max:50', 'email'],
-            'phone' => ['nullable', 'max:50'],
-            'address' => ['nullable', 'max:150'],
-            'city' => ['nullable', 'max:50'],
-            'region' => ['nullable', 'max:50'],
-            'country' => ['nullable', 'max:2'],
-            'postal_code' => ['nullable', 'max:25'],
+            'title' => ['required', 'max:50'],
+            'artist' => ['required', 'max:50'],
+            'genre' => ['nullable', 'max:50'],
+            'bpm' => ['nullable', 'max:50'],
+            'key' => ['nullable', 'max:150'],
+            'dropbox_link' => ['nullable', 'max:800'],
+            'youtube_link' => ['nullable', 'max:800'],
+            'duration' => ['nullable', 'max:50'],
+            'year' => ['nullable', 'max:50'],
         ];
     }
 }
