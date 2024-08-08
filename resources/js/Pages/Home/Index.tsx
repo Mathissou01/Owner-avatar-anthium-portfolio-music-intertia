@@ -19,6 +19,10 @@ export default function HomePage() {
             key={index}
             title={track.title}
             artist={track.artist}
+            dropboxLink={track.dropbox_link}
+            youtubeLink={track.youtube_link}
+            bpm={track.bpm}
+            clef={track.key}
           />
         ))}
         {/*<MusicCard*/}
